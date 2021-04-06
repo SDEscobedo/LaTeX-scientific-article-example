@@ -10,6 +10,12 @@
 \titleformat*{\section}{\bf\centering\MakeUppercase}
 \usepackage{authblk}
 
+\newcommand\blankfootnote[1]{
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup
+}
 
 \title{\textbf{Characterization of a high efficiency silicon photomultiplier for millisecond to sub-microsecond astrophysical transient searches}}
 \author[a]{Siyang Li} 
@@ -35,7 +41,8 @@
 \textbf{Keywords:} silicon photomultiplier, instrumentation, telescope, detector characterization, high efficiency, astrophysical transients, quantum optics
 
 \section{Introduction}
-Silicon photomultipliers (SiPM) are solid-state photodetectors consisting of thousands of single-photon avalanche photodiodes (SPAD), or microcells, connected in parallel. A photon incident on a microcell triggers a Geiger avalanche breakdown which produces an output current. The output of a SiPM is the sum of outputs for each individual microcell.
+Silicon photomultipliers (SiPM) are solid-state photodetectors consisting of thousands of single-photon avalanche photodiodes (SPAD), or microcells, connected in parallel. A photon incident on a microcell triggers a Geiger avalanche breakdown which produces an output current. The output of a SiPM is the sum of outputs for each individual microcell.\blankfootnote{Further author information: (Send correspondence to S.L.)}
+\blankfootnote{S.L.: E-mail: seanli@berkeley.edu}
 
 SPAD and SiPM are currently being implemented by several groups to investigate the variability of a variety of astrophysical phenomena. The Nakamori et al. (2020),\cite{nakamori2021development} Optical Pulsar Timing Analyser (OPTIMA),\cite{straubmeier2001optima} Silicon Fast Astronomical Photometer (SiFAP),\cite{ambrosino2017optical} and Aqueye+\cite{zampieri2019precise} teams have used SiPM to observe millisecond pulsars, and the Extreme Universe Space Observatory onboard the Japanese Experiment Module (JEM-EUSO) will characterize atmospheric events such as high energy cosmic ray showers using a SiPM array (Mini-EUSO) aboard the International Space Station.\cite{capel2018mini} The Cherenkov Telescope Array (CTA) will use ground-based SiPM telescopes to search for high energy gamma rays,3 and the Pulsed All-sky Near-infrared Optical Search for Extreterrestrial Intelligence (PANOSETI) collaboration is currently developing a SiPM all-sky optical and SPAD wide-field near-infrared observatory to search for extraterrestrial technosignatures.\cite{wright2018panoramic,li2019detector}
 
@@ -46,7 +53,7 @@ Our goal in this work was to both refine our testing methods to prepare for furt
 \section{Experimental Setup}
 The experimental setup and S14160-3050HS MPPC characterized in this study can be seen in Fig. \ref{fig:DarkBoxTest}. Detector parameters provided by Hamamatsu\cite{hamamtsu2016s13360} can be found in Table \ref{tab:table1}. The SiPM was placed inside a light-tight dark box containing BNC, USB, and power supply bulkhead feedthroughs. A 3.3 inch integrating sphere (Newport 819D-SL-3.3) was used to uniformly scatter light emitted from 365 nm, 400 nm, 450 nm, 525 nm, 560 nm, 660 nm, 720 nm, 810 nm, and 900 nm light-emitting diodes (LEDs) when illuminating the SiPM. The SiPM was placed 100 mm from the exit port of the integrating sphere. An internal baffle between the two side ports inside the integrating sphere prevents light emitted from the LEDs from directly exiting the integrating sphere before scattering. The LEDs were pulsed at 900 kHz using a waveform generator (Tektronix AFG1062) for photon detection efficiency (PDE) measurements and biased with direct current for linearity and saturation measurements.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
     \centering
     \begin{minipage}[b]{0.49\textwidth}
     \centering
@@ -65,7 +72,7 @@ The experimental setup and S14160-3050HS MPPC characterized in this study can be
 
 We mounted a NIST calibrated ultraviolet enhanced silicon photodiode (Newport 918D-UV-OD3R) on the northern port of the integrating sphere to monitor for changes in irradiance during measurements. A second photodiode of the same model was placed at the location of the SiPM to determine the ratio of irradiances between the northern port of the integrating sphere and the location of the SiPM. This ratio was recalibrated for each LED. We used the 32-channel Citiroc 1A evaluation board manufactured by Weeroc for our readout system. Current was measured using a picoammeter (Tektronix PWS2721). All measurements were performed at a room temperature of ($23.0 \pm 0.3$) °C.
 
-\begin{table}[h]
+\begin{table}[htb]
     \centering
     \begin{tabularx}{\textwidth}{
     |>{\centering\arraybackslash}X
@@ -154,12 +161,12 @@ We find a PDE of ($55 \pm 3$) \% at 450 nm and a 3 V over voltage.
 
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=4.5cm]{images/figura6.jpg}
+    \includegraphics[height=6cm]{images/figura6.jpg}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=4.5cm]{images/figura7.jpg}
+    \includegraphics[height=6cm]{images/figura7.jpg}
   \end{minipage}
      
 \caption{LEFT: PDE as a function of wavelength at a 3 V over voltage and 365 nm, 400 nm, 450 nm, 525 nm, 560 nm,
@@ -181,12 +188,12 @@ photons per second at a 3 V over voltage. We observe the SiPM and Citiroc 1A com
 
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=4.5cm]{images/figura8.jpg}
+    \includegraphics[height=6cm]{images/figura8.jpg}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=4.5cm]{images/figura9.jpg}
+    \includegraphics[height=6cm]{images/figura9.jpg}
   \end{minipage}
      
 \caption{LEFT: S14160-3050HS MPPC count rate as a function of incident photon ux and over voltage with the Citiroc 1A evaluation system. RIGHT: S14160-3050HS MPPC current as a function of incident photon ux and over voltage without the Citiroc 1A evaluation system.}
