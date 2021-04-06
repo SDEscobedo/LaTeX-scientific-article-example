@@ -1,23 +1,44 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[total={18cm,24cm},centering]{geometry}
-\usepackage{natbib}
-\setcitestyle{super,open={},close={},citesep={,}}
-\usepackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{titlesec}
-\titleformat*{\section}{\bf\centering\MakeUppercase}
-\usepackage{authblk}
+%Nota: La creación de este projecto puede verse en el curso de LaTeX 
+%en nuestro canal de YouTube: https://www.youtube.com/c/4Science
+%Creando un artículo científico desde cero con LaTeX
+%Creación del proyecto:Salvador D. Escobedo
+%Licencia de uso: MIT
 
+% Importante: 
+%  Este artículo se realizó como un ejercicio del uso de LaTeX
+%  basado en el artículo de Siyang Li y George Smoot, a quienes
+%  pertenecen todos los derechos del artículo científico.
+%  El artículo original puede verse en: https://arxiv.org/pdf/2012.00132.pdf
+%  ESTA RÉPLICA FUE CREADA CON FINES EDUCATIVOS
+%  NO DISTRIBUIR CUALQUIER PDF GENERADO CON ESTE CÓDIGO.
+
+\documentclass{article}
+%************************************
+\usepackage[utf8]{inputenc} %define la codificación del archivo
+\usepackage[total={18cm,24cm},centering]{geometry} %Genera nuevos márgenes en el documento
+\usepackage{natbib} %Provee de funcionalidades para el uso de archivos .bib para las referencias.
+\setcitestyle{super,open={},close={},citesep={,}} %Define el estilo de las citas
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref} %Provee funcionalidades para el uso de hipervincluos.
+\usepackage{graphicx} %Provee de funcionalidades para el uso de gráficos y archivos de imagen.
+\usepackage{tabularx} %Extiende las capacidades del entorno tabular.
+\usepackage{titlesec} %Permite asignar estilos a los títulos y subtítulos.
+\titleformat*{\section}{\bf\centering\MakeUppercase} %Define el estilo de los subtítulos (\section)
+\usepackage{authblk} %Provee funcionalidades para la presentación los autores.
+
+%El siguente código define el comando blankfootnote para notas en un formato personalizado
+%+++++++++++++++++++++++++++++++++++++++++++
 \newcommand\blankfootnote[1]{
   \begingroup
   \renewcommand\thefootnote{}\footnote{#1}
   \addtocounter{footnote}{-1}
   \endgroup
 }
+%++++++++++++++++++++++++++++++++++++++++++++
 
+%Estableciendo el título del artículo.
 \title{\textbf{Characterization of a high efficiency silicon photomultiplier for millisecond to sub-microsecond astrophysical transient searches}}
+
+%El formato de los autores requiere el paquete authblk (ver arriba)
 \author[a]{Siyang Li} 
 \author[a-h]{George F. Smoot}
 
@@ -30,14 +51,16 @@
 \affil[g]{Paris Centre for Cosmological Physics, Université Paris, France}
 \affil[h]{Donostia International Physics Center, Universidad del País Vasco, Spain}
 
-\date{}
+\date{} %La fecha debe ir en blanco si queremos omitirla
+
+%***************************************************************************************
 
 \begin{document}
 \maketitle
+
 \begin{abstract}
     We characterized the S14160-3050HS Multi-Pixel Photon Counter (MPPC), a high efficiency, single channel silicon photomultiplier manufactured by Hamamatsu Photonics K.K. All measurements were performed at a room temperature of (23.0 $\pm$ 0.3) °C. We obtained an I-V curve and used relative derivatives to find a breakdown voltage of 38.88 V. At a 3 V over voltage, we and a dark count rate of 1.08 MHz, crosstalk probability of 21\%, photon detection efficiency of 55 \% at 450 nm, and saturation at 1.0x1011 photons per second. The S14160-3050HS MPPC is a candidate detector for the Ultra-Fast Astronomy (UFA) telescope which will characterize the optical (320 nm - 650 nm) sky in the millisecond to sub-microsecond timescales using two photon counting arrays operated in coincidence on the 0.7 meter Nazarbayev University Transient Telescope at the Assy-Turgen Astrophysical Observatory (NUTTelA-TAO) located near Almaty, Kazakhstan. We discuss advantages and disadvantages of using the S14160-3050HS MPPC for the UFA telescope and future ground-based telescopes in sub-second time domain astrophysics.
 \end{abstract}
-
 \textbf{Keywords:} silicon photomultiplier, instrumentation, telescope, detector characterization, high efficiency, astrophysical transients, quantum optics
 
 \section{Introduction}
@@ -161,17 +184,17 @@ We find a PDE of ($55 \pm 3$) \% at 450 nm and a 3 V over voltage.
 
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=6cm]{images/figura6.jpg}
+    \includegraphics[height=5.5cm]{images/figura6.jpg}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=6cm]{images/figura7.jpg}
+    \includegraphics[height=5.5cm]{images/figura7.jpg}
   \end{minipage}
      
-\caption{LEFT: PDE as a function of wavelength at a 3 V over voltage and 365 nm, 400 nm, 450 nm, 525 nm, 560 nm,
-660 nm, 720 nm, 810 nm, and 900 nm. RIGHT: PDE as a function of over voltage at 450 nm.}
-\label{fig:PDE}
+    \caption{LEFT: PDE as a function of wavelength at a 3 V over voltage and 365 nm, 400 nm, 450 nm, 525 nm, 560 nm,
+    660 nm, 720 nm, 810 nm, and 900 nm. RIGHT: PDE as a function of over voltage at 450 nm.}
+    \label{fig:PDE}
     
 \end{figure}
 \subsection{Linearity and Saturation}
@@ -188,16 +211,16 @@ photons per second at a 3 V over voltage. We observe the SiPM and Citiroc 1A com
 
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=6cm]{images/figura8.jpg}
+    \includegraphics[height=5.5cm]{images/figura8.jpg}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.49\textwidth}
     \centering     
-    \includegraphics[height=6cm]{images/figura9.jpg}
+    \includegraphics[height=5.5cm]{images/figura9.jpg}
   \end{minipage}
      
-\caption{LEFT: S14160-3050HS MPPC count rate as a function of incident photon ux and over voltage with the Citiroc 1A evaluation system. RIGHT: S14160-3050HS MPPC current as a function of incident photon ux and over voltage without the Citiroc 1A evaluation system.}
-\label{fig:PhotonsPerSecond}
+    \caption{LEFT: S14160-3050HS MPPC count rate as a function of incident photon ux and over voltage with the Citiroc 1A evaluation system. RIGHT: S14160-3050HS MPPC current as a function of incident photon ux and over voltage without the Citiroc 1A evaluation system.}
+    \label{fig:PhotonsPerSecond}
     
 \end{figure}
 
@@ -216,6 +239,7 @@ This work was supported by the Hong Kong University of Science and Technology. S
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
+
 \end{document}
 
 
